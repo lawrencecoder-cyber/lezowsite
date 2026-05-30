@@ -1,0 +1,31 @@
+<h1>Your Watchlists</h1>
+
+{% for watchlist in watchlists %}
+    <div>
+        <h2>{{ watchlist.name }}</h2>
+
+        <form method="post" action="{% url 'add_stock' watchlist.id %}">
+            {% csrf_token %}
+            <input name="symbol" placeholder="Add stock symbol">
+            <button>Add</button>
+        </form>
+
+        <ul>
+            {% for item in watchlist.items.all %}
+                <li>
+                    {{ item.stock.symbol }} - {{ item.stock.current_price }}
+
+                    <a href="{% url 'remove_stock' watchlist.id item.stock.symbol %}">
+                        Remove
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endfor %}
+
+<form method="post" action="{% url 'create_watchlist' %}">
+    {% csrf_token %}
+    <input name="name" placeholder="New watchlist name">
+    <button>Create</button>
+</form>

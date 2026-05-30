@@ -1,0 +1,27 @@
+<h1>Live Market Dashboard</h1>
+
+<div id="stocks">
+    <h2>Top Stocks</h2>
+
+    {% for stock in top_stocks %}
+        <div class="stock-card" id="stock-{{ stock.symbol }}">
+            <strong>{{ stock.symbol }}</strong>
+            <p>${{ stock.current_price }}</p>
+            <p>{{ stock.percent_change }}%</p>
+        </div>
+    {% endfor %}
+</div>
+
+<hr>
+
+<div id="movers">
+    <h2>Top Movers</h2>
+
+    {% for stock in movers %}
+        <div>
+            {{ stock.symbol }} → {{ stock.percent_change }}%
+        </div>
+    {% endfor %}
+</div>
+
+<script src="/static/js/websocket.js"></script>

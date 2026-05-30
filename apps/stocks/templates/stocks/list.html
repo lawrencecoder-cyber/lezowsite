@@ -1,0 +1,9 @@
+<h1>Stocks</h1>
+
+{% for stock in stocks %}
+    <div>
+        <a href="{% url 'stock_detail' stock.symbol %}">
+            {{ stock.symbol }} - {{ stock.current_price }}
+        </a>
+    </div>
+{% endfor %}

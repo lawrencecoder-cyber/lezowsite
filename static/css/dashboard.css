@@ -1,0 +1,53 @@
+/* =========================
+   DASHBOARD UI
+========================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 16px;
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--card);
+    padding: 16px;
+    border-radius: 12px;
+    height: 100vh;
+}
+
+/* Main panel */
+.main-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Top stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.stat-card {
+    background: var(--card);
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Live indicator */
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 1.5s infinite;
+}

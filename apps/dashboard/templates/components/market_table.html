@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>% Change</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for stock in stocks %}
+        <tr id="stock-{{ stock.symbol }}">
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.current_price }}</td>
+            <td>{{ stock.percent_change }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+<h1>Notifications</h1>
+
+<h2>Alerts</h2>
+
+{% for alert in alerts %}
+    <div>
+        {{ alert.stock.symbol }} → {{ alert.target_price }}
+    </div>
+{% endfor %}
+
+<h2>Notifications</h2>
+
+{% for n in notifications %}
+    <div>
+        {{ n.message }}
+    </div>
+{% endfor %}
+
+<form method="post" action="{% url 'create_alert' %}">
+    {% csrf_token %}
+    <input name="symbol" placeholder="Stock symbol">
+    <input name="price" placeholder="Target price">
+    <button>Create Alert</button>
+</form>

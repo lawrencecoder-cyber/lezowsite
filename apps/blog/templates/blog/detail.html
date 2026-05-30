@@ -1,0 +1,7 @@
+<h1>{{ post.title }}</h1>
+
+{% if post.cover_image %}
+    <img src="{{ post.cover_image.url }}" width="400">
+{% endif %}
+
+<p>{{ post.content }}</p>

@@ -1,0 +1,12 @@
+<h1>Live Market Dashboard</h1>
+
+<div
+    hx-get="/stocks/table/"
+    hx-trigger="load, every 5s"
+    hx-swap="innerHTML"
+>
+    {% include "components/stock_table.html" %}
+</div>
+
+<script src="/static/js/websocket.js"></script>
+<script src="/static/js/htmx.min.js"></script>

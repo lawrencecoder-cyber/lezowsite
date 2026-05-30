@@ -1,0 +1,11 @@
+<h1>Create Post</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    <input name="title" placeholder="Title"><br>
+    <textarea name="content" placeholder="Content"></textarea><br>
+    <input name="tags" placeholder="Tags"><br>
+
+    <button>Create</button>
+</form>

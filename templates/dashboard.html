@@ -1,0 +1,21 @@
+<h1>Analytics Dashboard</h1>
+
+<h2>User Activity</h2>
+
+<ul>
+    {% for a in activity %}
+        <li>{{ a.action }} - {{ a.created_at }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Market Summaries</h2>
+
+<ul>
+    {% for s in summaries %}
+        <li>
+            {{ s.symbol }} →
+            Avg Price: {{ s.avg_price }},
+            Volatility: {{ s.volatility }}
+        </li>
+    {% endfor %}
+</ul>

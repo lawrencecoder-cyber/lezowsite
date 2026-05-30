@@ -1,0 +1,45 @@
+/* =========================
+   STOCK TABLE STYLING
+========================= */
+
+.stock-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.stock-table th,
+.stock-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.stock-table th {
+    background: #0f172a;
+    color: var(--muted);
+}
+
+/* Price movement colors */
+.price-up {
+    color: var(--green);
+    font-weight: bold;
+}
+
+.price-down {
+    color: var(--red);
+    font-weight: bold;
+}
+
+/* Row hover */
+.stock-table tr:hover {
+    background: #111c2e;
+    transition: 0.2s;
+}
+
+/* Live update highlight */
+.updated {
+    animation: flash 0.8s ease;
+}

@@ -1,0 +1,439 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<header>
+
+<nav class="navbar">
+
+<a href="/" class="logo">
+
+LezowSite
+
+</a>
+
+
+<ul class="nav-links">
+
+<li><a href="#features">Features</a></li>
+
+<li><a href="/stocks/">Stocks</a></li>
+
+<li><a href="/analytics/">Analytics</a></li>
+
+<li><a href="/blog/">Blog</a></li>
+
+</ul>
+
+
+<div class="nav-actions">
+
+<a href="/dashboard/" class="btn btn-secondary">
+
+Dashboard
+
+</a>
+
+<button id="themeToggle">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
+
+</div>
+
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<span class="badge">
+
+Smart Investing Platform
+
+</span>
+
+<h1>
+
+Invest Smarter.
+Analyze Faster.
+
+</h1>
+
+<p>
+
+Track stocks, monitor watchlists,
+discover opportunities,
+and gain powerful financial insights.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="/stocks/" class="btn btn-primary">
+
+Explore Stocks
+
+</a>
+
+<a href="/dashboard/" class="btn btn-outline">
+
+Open Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="hero-image">
+
+<img src="{% static 'images/dashboard-preview.png' %}"
+
+alt="dashboard">
+
+</div>
+
+</section>
+
+
+
+<section class="stats">
+
+<div>
+
+<h2>20K+</h2>
+
+<p>Investors</p>
+
+</div>
+
+
+<div>
+
+<h2>3,500+</h2>
+
+<p>Tracked Stocks</p>
+
+</div>
+
+
+<div>
+
+<h2>99.9%</h2>
+
+<p>Platform Uptime</p>
+
+</div>
+
+
+<div>
+
+<h2>150K+</h2>
+
+<p>Watchlists Created</p>
+
+</div>
+
+</section>
+
+
+
+
+<section id="features" class="features">
+
+<h2>
+
+Everything Investors Need
+
+</h2>
+
+<p>
+
+Powerful tools designed to simplify investing.
+
+</p>
+
+
+<div class="cards">
+
+
+
+<a href="/stocks/" class="card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Stocks</h3>
+
+<p>
+
+Track real-time prices,
+market trends and performance.
+
+</p>
+
+</a>
+
+
+
+<a href="/watchlist/" class="card">
+
+<i class="fa-solid fa-star"></i>
+
+<h3>Watchlist</h3>
+
+<p>
+
+Organize favorite stocks
+and monitor movements.
+
+</p>
+
+</a>
+
+
+
+<a href="/analytics/" class="card">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+<h3>Analytics</h3>
+
+<p>
+
+Advanced metrics,
+growth indicators,
+risk analysis.
+
+</p>
+
+</a>
+
+
+
+
+<a href="/dashboard/" class="card">
+
+<i class="fa-solid fa-table-columns"></i>
+
+<h3>Dashboard</h3>
+
+<p>
+
+Personalized investment overview
+in one place.
+
+</p>
+
+</a>
+
+
+
+
+<a href="/blog/" class="card">
+
+<i class="fa-solid fa-newspaper"></i>
+
+<h3>Blog</h3>
+
+<p>
+
+Financial education,
+guides and market commentary.
+
+</p>
+
+</a>
+
+
+
+
+<a href="/notifications/" class="card">
+
+<i class="fa-solid fa-bell"></i>
+
+<h3>Alerts</h3>
+
+<p>
+
+Receive updates and
+important notifications.
+
+</p>
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<section class="testimonials">
+
+<h2>
+
+Trusted by Investors
+
+</h2>
+
+
+<div class="testimonial-grid">
+
+<div class="testimonial">
+
+<p>
+
+"LezowSite transformed how I manage my investments."
+
+</p>
+
+<h4>
+
+Michael Johnson
+
+</h4>
+
+<span>
+
+Retail Investor
+
+</span>
+
+</div>
+
+
+
+<div class="testimonial">
+
+<p>
+
+"Analytics tools are simple,
+powerful and incredibly useful."
+
+</p>
+
+<h4>
+
+Sarah Lee
+
+</h4>
+
+<span>
+
+Portfolio Manager
+
+</span>
+
+</div>
+
+
+
+<div class="testimonial">
+
+<p>
+
+"My favorite place for stock research."
+
+</p>
+
+<h4>
+
+David Kim
+
+</h4>
+
+<span>
+
+Day Trader
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<section class="cta">
+
+<h2>
+
+Ready to improve your investing?
+
+</h2>
+
+<p>
+
+Start tracking stocks and building smarter portfolios today.
+
+</p>
+
+
+<a href="/stocks/" class="btn btn-primary">
+
+Get Started
+
+</a>
+
+</section>
+
+
+
+<footer>
+
+<div>
+
+© 2026 LezowSite
+
+</div>
+
+<div class="footer-links">
+
+<a href="#">Privacy</a>
+
+<a href="#">Terms</a>
+
+<a href="#">Support</a>
+
+</div>
+
+</footer>
+
+
+<script>
+
+const toggle =
+document.getElementById('themeToggle');
+
+toggle.onclick = ()=>{
+
+document.body.classList.toggle('dark')
+
+}
+
+</script>
+
+
+{% endblock %}

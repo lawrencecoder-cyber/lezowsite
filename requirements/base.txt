@@ -8,12 +8,15 @@ python-decouple
 dj-database-url
 psycopg2-binary
 
-# CORS
-django-cors-headers
-
 # API
 djangorestframework
 djangorestframework-simplejwt
+
+# CORS
+django-cors-headers
+
+# HTMX
+django-htmx
 
 # Redis
 redis
@@ -28,6 +31,7 @@ django-celery-results
 channels
 channels-redis
 daphne
+
 # Static files
 whitenoise
 

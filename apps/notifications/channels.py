@@ -1,6 +1,6 @@
 from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
-
+from apps.stocks.websocket.broadcasters import StockBroadcaster
 
 class NotificationChannel:
 
@@ -16,7 +16,7 @@ class NotificationChannel:
                 "type": "notify.message",
                 "data": payload,
             },
-        )from apps.stocks.websocket.broadcasters import StockBroadcaster
+        )
 
 
 class NotificationChannel:

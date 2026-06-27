@@ -1,5 +1,5 @@
-from django.http import JsonResponse
+from django.shortcuts import render
 
 
-def health_check(request):
-    return JsonResponse({"status": "ok"})
+def home_view(request):
+    return render(request, "common/home.html")

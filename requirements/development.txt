@@ -1,0 +1,18 @@
+-r base.txt
+
+# Interactive shell
+ipython
+
+# Debugging
+django-debug-toolbar
+
+# Testing
+pytest
+pytest-django
+
+# Formatting
+black
+isort
+
+# Linting
+flake8

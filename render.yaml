@@ -2,12 +2,34 @@ services:
   - type: web
     name: lezowsite
     env: python
+
     buildCommand: "./build.sh"
     startCommand: "./start.sh"
+
     envVars:
       - key: DATABASE_URL
         sync: false
+
+      - key: REDIS_URL
+        sync: false
+
       - key: SECRET_KEY
         sync: false
-      - key: REDIS_URL
+
+      - key: DEBUG
+        value: "False"
+
+      - key: DJANGO_SETTINGS_MODULE
+        value: "config.settings.production"
+
+      - key: WEB_CONCURRENCY
+        value: "2"
+
+      - key: PYTHON_VERSION
+        value: "3.13"
+
+      - key: ALLOWED_HOSTS
+        sync: false
+
+      - key: CSRF_TRUSTED_ORIGINS
         sync: false

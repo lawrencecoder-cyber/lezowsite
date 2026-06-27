@@ -1,12 +1,4 @@
 -r base.txt
 
+# Production server
 gunicorn
-psycopg2-binary
-django-redis
-celery
-redis
-whitenoise
-djangorestframework
-djangorestframework-simplejwt
-channels
-python-decouple

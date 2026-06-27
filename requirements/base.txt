@@ -1,0 +1,32 @@
+# Django
+Django
+
+# Environment variables
+python-decouple
+
+# Database
+dj-database-url
+psycopg2-binary
+
+# API
+djangorestframework
+djangorestframework-simplejwt
+
+# Redis
+redis
+django-redis
+
+# Background tasks
+celery
+django-celery-beat
+django-celery-results
+
+# WebSockets
+channels
+channels-redis
+
+# Static files
+whitenoise
+
+# Images
+Pillow

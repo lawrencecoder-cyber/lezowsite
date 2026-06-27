@@ -24,7 +24,7 @@ django-celery-results
 # WebSockets
 channels
 channels-redis
-
+daphne
 # Static files
 whitenoise
 

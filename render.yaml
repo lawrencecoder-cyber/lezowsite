@@ -1,10 +1,14 @@
 services:
+  # Django Web
   - type: web
     name: lezowsite
+
     env: python
 
     buildCommand: "./build.sh"
-    startCommand: "./start.sh"
+
+    startCommand: >
+      daphne -b 0.0.0.0 -p $PORT config.asgi:application
 
     envVars:
       - key: DATABASE_URL
@@ -16,20 +20,62 @@ services:
       - key: SECRET_KEY
         sync: false
 
+      - key: DJANGO_SETTINGS_MODULE
+        value: config.settings.production
+
       - key: DEBUG
         value: "False"
 
+
+
+  # Celery Worker
+  - type: worker
+    name: lezowsite-worker
+
+    env: python
+
+    buildCommand: "./build.sh"
+
+    startCommand: >
+      celery -A config worker
+      --loglevel=info
+
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+
+      - key: REDIS_URL
+        sync: false
+
+      - key: SECRET_KEY
+        sync: false
+
       - key: DJANGO_SETTINGS_MODULE
-        value: "config.settings.production"
+        value: config.settings.production
 
-      - key: WEB_CONCURRENCY
-        value: "2"
 
-      - key: PYTHON_VERSION
-        value: "3.13"
 
-      - key: ALLOWED_HOSTS
+  # Celery Beat
+  - type: worker
+    name: lezowsite-beat
+
+    env: python
+
+    buildCommand: "./build.sh"
+
+    startCommand: >
+      celery -A config beat
+      --loglevel=info
+
+    envVars:
+      - key: DATABASE_URL
         sync: false
 
-      - key: CSRF_TRUSTED_ORIGINS
+      - key: REDIS_URL
         sync: false
+
+      - key: SECRET_KEY
+        sync: false
+
+      - key: DJANGO_SETTINGS_MODULE
+        value: config.settings.production

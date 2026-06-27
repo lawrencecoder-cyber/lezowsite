@@ -2,8 +2,8 @@ from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
 from apps.stocks.websocket.broadcasters import StockBroadcaster
 
-class NotificationChannel:
 
+class NotificationChannel:
     GROUP_NAME = "notifications"
 
     @staticmethod
@@ -18,12 +18,11 @@ class NotificationChannel:
             },
         )
 
-
-class NotificationChannel:
-
     @staticmethod
     def send_stock_alert(alert_data):
-        StockBroadcaster.broadcast({
-            "type": "alert",
-            "data": alert_data,
-        })
+        StockBroadcaster.broadcast(
+            {
+                "type": "alert",
+                "data": alert_data,
+            }
+        )

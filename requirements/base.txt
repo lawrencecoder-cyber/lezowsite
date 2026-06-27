@@ -8,6 +8,9 @@ python-decouple
 dj-database-url
 psycopg2-binary
 
+# CORS
+django-cors-headers
+
 # API
 djangorestframework
 djangorestframework-simplejwt
